@@ -1,0 +1,204 @@
+/* For mobile phones */
+
+.container{
+    width: 100%;
+}
+.wrapper{
+    padding:15px 10px 15px 10px;
+    width: 100vw;
+    font-family: Lato;
+    min-height: calc(100vh - 130px);
+    margin: 120px auto 0 auto;
+}
+.movie{
+    background-color: #fff;
+    width: calc(100vw -20px);
+    height: 280px;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    padding: 10px;
+    box-shadow: 0 1px 4px #4A5568 ;
+    margin-bottom: 10px;
+}
+.movie p{
+    margin: 0;
+    align-self: start;
+    font-size: 1.5rem;
+    color: #2D2D2D;
+    font-weight: 600;
+
+}
+
+.movie p span{
+    color: #718096;
+    font-weight: 400;
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+.movieContent{
+display: grid;
+grid-template-columns: 45% 55%;
+}
+.img{
+height: 210px;
+background-color: salmon;
+width:94%;
+max-width: 190px;
+}
+.availability{
+    display: grid;
+    grid-template-rows: 30px 1fr ;
+    margin-left:3px;
+    
+}
+.availability p{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.sites{
+    display: grid;
+    grid-template-rows: 90px;
+    grid-template-columns: repeat(auto-fit , minmax(60px, 60px));
+    margin-bottom: 10px;
+    height: 80%;
+    grid-column-gap: 10px;
+}
+.sites div{
+    width: 60px;
+    height:60px;
+    border-radius: 15px;
+  background-color: brown;
+  align-self: center;
+  justify-self: center;
+}
+
+
+/* for smaller screen mobiles 360px to 420px */
+@media only screen and (max-width: 420px){
+.sites{
+    display: grid;
+    grid-template-rows: 90px;
+    grid-template-columns: repeat(auto-fit , minmax(50px, 50px));
+    margin-bottom: 10px;
+    height: 80%;
+    grid-column-gap: 10px;
+}
+.sites div{
+    width: 50px;
+    height:50px;
+    border-radius: 15px;
+  background-color: brown;
+  align-self: center;
+  justify-self: center;
+}
+}
+
+
+/* for desktops */
+@media only screen and (min-width: 700px)
+{
+.container{
+    width: 100%;
+}
+.wrapper{
+    padding:15px 10px 15px 10px;
+    max-width: 800px;
+    margin: 110px auto 0 auto;
+    font-family: Lato;
+    min-height: calc(100vh - 220px);
+    height: 100%;
+    background-color: #fff;
+}
+.movie{
+    background-color: #fff;
+    width: calc(100vw -20px);
+    padding: 20px;
+    height: 280px;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    padding: 10px;
+    box-shadow: none ;
+    margin-bottom: 10px;
+}
+.movie p{
+    margin: 0;
+    align-self: start;
+    font-size: 1.5rem;
+    color: #2D2D2D;
+    font-weight: 600;
+    margin-left: 20px;
+
+}
+
+.movie p span{
+    color: #718096;
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.movieContent{
+display: grid;
+grid-template-columns: 220px 1fr;
+grid-column-gap: 20px;
+}
+.img{
+height: 200px;
+background-color: salmon;
+width:94%;
+max-width: 190px;
+margin-left: 20px;
+}
+.availability{
+    display: grid;
+    grid-template-rows: 30px 1fr ;
+    margin-left:3px;
+    
+}
+.availability p{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.sites{
+    display: grid;
+    grid-template-rows: 90px;
+    grid-template-columns: repeat(auto-fit , minmax(70px, 70px));
+    margin-bottom: 10px;
+    height: 80%;
+    grid-column-gap: 10px;
+}
+.sites div{
+    width: 70px;
+    height:70px;
+    border-radius: 15px;
+  background-color: brown;
+  align-self: center;
+  justify-self: center;
+}
+}
+
+/* for tablets */
+@media only screen and (min-width: 500px)
+{
+    .wrapper{
+        margin: 100px auto 0 auto;
+    }
+
+.sites{
+    display: grid;
+    grid-template-rows: 90px;
+    grid-template-columns: repeat(auto-fit , minmax(70px, 70px));
+    margin-bottom: 10px;
+    height: 80%;
+    grid-column-gap: 10px;
+}
+.sites div{
+    width: 70px;
+    height:70px;
+    border-radius: 15px;
+  background-color: brown;
+  align-self: center;
+  justify-self: center;
+}
+}

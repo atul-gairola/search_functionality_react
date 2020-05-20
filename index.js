@@ -7,13 +7,15 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+let movie = 'sunshine';
+
+    const res = searchFunction(movie, db);
+    console.log(res);
+
 app.get('/', (req, res) => {
 res.send('hi');
-const movie = 'elec';
-searchFunction(movie, db);
 });
 
-
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('Server active on port 3000');
-})
+});
