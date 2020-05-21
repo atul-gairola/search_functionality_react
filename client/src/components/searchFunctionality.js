@@ -1,6 +1,6 @@
-const Fuse = require('fuse.js');
+import Fuse from 'fuse.js';
 
-module.exports = (movie,db) => {
+const f = (movie,db) => {
 
     const options = {
         shouldSort: true,
@@ -10,14 +10,14 @@ module.exports = (movie,db) => {
         ]
     }
 
-    const fuse = new Fuse(db, options);
+    const fuse = new Fuse(JSON.stringify(db), options);
 
     return fuse.search(movie).map((cur) => {
         return JSON.parse(JSON.stringify(cur));
     }).slice(0,10);
 
 }
-
+export default f;
 
 
 

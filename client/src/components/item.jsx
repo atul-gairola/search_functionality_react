@@ -1,26 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Item.css';
+import Movie from './Movie';
 
-function Item(){
+function Item(props){
+
     return <div className="container">
     <div className="wrapper">
-      <div className="movie" >
-          <p>movie.title<span>movie.year</span></p>
-          <div className="movieContent">
-              <div className="img"></div>
-              <div className="availability">
-                <p>Available On</p>
-                <div className="sites">
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                </div>
-              </div>
-          </div>
-      </div>
+    {props.res.forEach(cur => {
+      return <Movie movie = {cur.MovieName} year = {cur.Year}/>
+    })}
    </div>
   </div>
   
