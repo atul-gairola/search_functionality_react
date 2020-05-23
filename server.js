@@ -28,6 +28,7 @@ console.log('Body: ', inputMovieName);
 
 const PORT = process.env.PORT || 5000;
 
+// for deployment
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
 }
