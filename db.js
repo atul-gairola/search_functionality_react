@@ -1,4 +1,4 @@
-module.exports = [
+const db = [
     {
         "MovieName": "#Pellichoopulu",
         "Year": 2016,
@@ -423,3 +423,5 @@ module.exports = [
         "AltText": "12 gifts of christmas,12 gifts of christmas 2015"
       },
     ]
+
+module.exports = db;

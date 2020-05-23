@@ -1,33 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 import Header from './Header';
-import Item from './item';
-import searchFunction from './searchFunctionality';
+import Item from './Item';
 
 function App() {
-   const[resArr, setResArr] = useState([]);
+   // the result is the fetched data from the api
+   const [res, setRes] = useState([]);
 
-   let db ;
-  
-   const fetchData = async() => {
-    const res = await fetch('http://localhost:5000/');
-    const json = await res.json();
-    db = json;
-    console.log(db);
-   }
-   useEffect(() => {
-     fetchData();
-   },[])
- 
-
+   // is called by header on click
    function onInput(value){
-     setResArr(searchFunction(value,db));
+
+   // sends the searched input
+      async function sendData(){ 
+         try{
+           await axios({
+              url: '/',
+              method: 'POST',
+              data: {movie: value}
+           });
+           console.log('data sent');
+         }catch(err){
+           console.log(`Error: ${err}`);
+         }
+     }
+  
+   // gets the filtered data from the api
+     async function getData(){
+        try{
+          const result =  await axios.get('/api');
+          // changes the state of the result
+          setRes(result.data);
+        }catch(error){
+          console.log(error);
+        }
+     }
+  
+     sendData();
+     getData();
    }
+
+console.log(res);
 
 return <div>
    <Header onInput = {onInput} />
-   <Item res = {resArr} />
+   <Item movies = {res}/>
 </div>
+
 }
 
 export default App;
